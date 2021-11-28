@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/labyrinth_nav"
+    app:startDestination="@id/levelFragment">
+
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.leventyapar.labyrinth.Fragment.LevelFragment"
+        android:label="fragment_level"
+        tools:layout="@layout/fragment_level" >
+        <action
+            android:id="@+id/action_levelFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.leventyapar.labyrinth.Fragment.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="level"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="length"
+            app:argType="integer" />
+        <argument
+            android:name="square"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
